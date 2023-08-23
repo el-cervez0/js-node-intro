@@ -7,9 +7,13 @@
   "main": "hello.js",
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node hello.js",
+    "test": "npm run test"
   },
-  "author": "",
+  "author": "el_cervez0",
   "license": "ISC",
+  "bugs":{
+    "url": "https://github.com/el-cervez0/js-node-intro"
+  },
   "description": ""
 }

@@ -2,6 +2,8 @@ const http = require('http');
 const fs = require('fs');
 const url = require('url')
 
+const port = process.env.PORT || 5000;
+
 http.createServer(function (req, res) {
     const q = url.parse(req.url, true);
     let filename = "." + q.pathname;
@@ -19,5 +21,5 @@ http.createServer(function (req, res) {
         res.write(data);
         return res.end();
     })
-}).listen(8080)
+}).listen(port)
 console.log("Port listening on 8080");
