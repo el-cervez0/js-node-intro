@@ -2,15 +2,11 @@ const http = require('http');
 const fs = require('fs');
 const url = require('url')
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 
 http.createServer(function (req, res) {
     const q = url.parse(req.url, true);
     let filename = "." + q.pathname;
-    if (filename == './') {
-        filename = './index';
-    }
-    filename = filename + '.html';
     console.log(filename);
     fs.readFile(filename, function (err, data) {
         if (err) {
@@ -22,4 +18,4 @@ http.createServer(function (req, res) {
         return res.end();
     })
 }).listen(port)
-console.log("Port listening on 8080");
+// console.log("Port listening on " + port);
